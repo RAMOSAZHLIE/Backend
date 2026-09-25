@@ -1,7 +1,7 @@
-import* as studentModels from '../models/studentModels.js';
+import* as studentsModels from '../models/studentsModels.js';
 
 export const fetchAllBooks = async() => {
-    const books = await studentModels.fetchAllstudent();
-    return student;
+    const students = await studentsModels.fetchAllstudents();
+    return students;
 
 };

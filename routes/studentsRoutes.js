@@ -1,8 +1,8 @@
-import * as studentController from '../controllers/studentkControllers.js';
+import * as studentsController from '../controllers/studentskControllers.js';
 import express from "express";
 
-const studentRoutes = express.Router();
+const studentsRoutes = express.Router();
 
-bookRoutes.get('/all', studentController.fetchAllstudent);
+studentsRoutes.get('/all', studentsController.fetchAllstudents);
 
-export default studentRoutes;
+export default studentsRoutes;
