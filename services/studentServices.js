@@ -5,3 +5,8 @@ export const fetchAllBooks = async() => {
     return students;
 
 };
+
+export const createStudent = async(student) => {
+    const studentId = await studentsModels.insert(student);
+    return studentId;
+}
