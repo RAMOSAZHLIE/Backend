@@ -12,3 +12,10 @@ export const insert = async(student) => {
     );
     return result.insertId;
 }
+//delete
+export const remove = async (id) => {
+    const [result] = await pool.query(
+        "DELETE FROM students WHERE id= ?", [id]
+    );
+    return result.afftectedRows
+}
