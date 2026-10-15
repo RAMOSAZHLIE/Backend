@@ -42,4 +42,19 @@ export const editBook = async(req, res) => {
         });
     }
 }
-    
+export const deleteBook = async (req,res) => {
+    const {id} = req.params;
+
+    try{
+        const deleteBook = await bookServices.deleteBook(parseInt(id));
+        res.status(200).json({
+            success: true,
+            message: deleteBook
+        });
+    }catch(e){
+        console.log(e);
+        res.status(500).json({
+            error: "Internal Service Error"
+        });
+    }
+}    
