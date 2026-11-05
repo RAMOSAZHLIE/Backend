@@ -1,7 +1,7 @@
 import * as bookServices from '../services/bookServices.js';
 
 export const fetchAllBooks = async(req, res) => {
-    const books = await bookServices.fetchAllBooks();
+    const books = await bookServices.fetchAllBook();
     res.status(200).json(books);
 }
 
@@ -17,8 +17,8 @@ export const createBook = async(req, res) => {
         });
     }catch(e) {
         console.log(e);
-        res.status(500).json({
-            error: "Internal Service Error"
+        res.status(e.statusCode).json({
+            error: e.message
         });
     }
 }
@@ -26,7 +26,7 @@ export const createBook = async(req, res) => {
 export const editBook = async(req, res) => {
     const {name, author} = req.body;
     const {id} = req.params;
-    const Book = {id: parseInt(id), name, author
+    const book = {id: parseInt(id), name, author
     };
 
      try{
@@ -37,8 +37,8 @@ export const editBook = async(req, res) => {
         });
     }catch(e){
         console.log(e);
-        res.status(500).json({
-            error: "Internal Service Error"
+        res.status(e.statusCode).json({
+            error: e.message
         });
     }
 }
